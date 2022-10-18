@@ -1,8 +1,8 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import styled from "styled-components/native";
 
-const Container = styled.View`
+const Container = styled.SafeAreaView`
   flex: 1;
   background-color: "#fff";
   align-items: "center";
@@ -14,7 +14,8 @@ export default function App() {
 
   return (
     <Container>
-      <Text>Hello World People!</Text>
+      <Text> Hello World People! </Text>
+      <Image source={require("./assets/Rectangle 1534.png")} />
       <StatusBar style="auto" />
     </Container>
   );
