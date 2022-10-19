@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Button, Image, StyleSheet, Text, View } from "react-native";
 import styled from "styled-components/native";
 
 const Container = styled.SafeAreaView`
@@ -16,6 +16,7 @@ export default function App() {
     <Container>
       <Text> Hello World People! </Text>
       <Image source={require("./assets/Rectangle 1534.png")} />
+      <Button title="Click here" onPress={() => alert("Hello Clicked")} />
       <StatusBar style="auto" />
     </Container>
   );
