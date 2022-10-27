@@ -1,14 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 
-import {
-  Image,
-  Platform,
-  SafeAreaView,
-  StatusBar as NativeStatusBar,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { StatusBar as NativeStatusBar } from "react-native";
 import styled from "styled-components/native";
 import Button from "./Components/Atoms/Button";
 import Home from "./Components/Pages";
@@ -31,9 +23,3 @@ export default function App() {
     </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
