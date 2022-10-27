@@ -1,21 +1,22 @@
 import { StatusBar } from "expo-status-bar";
+
 import {
-  Button,
   Image,
   Platform,
   SafeAreaView,
+  StatusBar as NativeStatusBar,
   StyleSheet,
   Text,
   View,
 } from "react-native";
 import styled from "styled-components/native";
+import Button from "./Components/Atoms/Button";
+import Home from "./Components/Pages";
 import { AppTheme, ThemeProvider } from "./Styles/AppTheme";
 
-const Container = styled.SafeAreaView`
+const MainWrapper = styled.SafeAreaView`
   flex: 1;
-  background-color: "#fff";
-  align-items: "center";
-  justify-content: "center";
+  padding-top: ${() => NativeStatusBar.currentHeight}px;
 `;
 
 export default function App() {
@@ -23,15 +24,10 @@ export default function App() {
 
   return (
     <ThemeProvider theme={AppTheme}>
-
-    <SafeAreaView style={styles.container}>
-      <View>
-        <Text> Hello World People! </Text>
-        <Image source={require("./assets/Rectangle 1534.png")} />
-        <Button title="Click here" onPress={() => alert("Hello Clicked")} />
-      </View>
+      <MainWrapper>
+        <Home />
+      </MainWrapper>
       <StatusBar style="auto" />
-    </SafeAreaView>
     </ThemeProvider>
   );
 }
