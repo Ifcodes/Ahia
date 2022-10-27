@@ -1,6 +1,15 @@
 import { StatusBar } from "expo-status-bar";
-import { Button, Image, StyleSheet, Text, View } from "react-native";
+import {
+  Button,
+  Image,
+  Platform,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import styled from "styled-components/native";
+import { AppTheme, ThemeProvider } from "./Styles/AppTheme";
 
 const Container = styled.SafeAreaView`
   flex: 1;
@@ -13,11 +22,22 @@ export default function App() {
   console.log("app executed");
 
   return (
-    <Container>
-      <Text> Hello World People! </Text>
-      <Image source={require("./assets/Rectangle 1534.png")} />
-      <Button title="Click here" onPress={() => alert("Hello Clicked")} />
+    <ThemeProvider theme={AppTheme}>
+
+    <SafeAreaView style={styles.container}>
+      <View>
+        <Text> Hello World People! </Text>
+        <Image source={require("./assets/Rectangle 1534.png")} />
+        <Button title="Click here" onPress={() => alert("Hello Clicked")} />
+      </View>
       <StatusBar style="auto" />
-    </Container>
+    </SafeAreaView>
+    </ThemeProvider>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
