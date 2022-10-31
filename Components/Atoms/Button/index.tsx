@@ -10,9 +10,9 @@ const ButtonWrapper = styled.View`
 const Text = styled.Text`
   color: white;
 `;
-const Button = () => {
+const Button = ({onClick}: {onClick?: Function}) => {
   return (
-    <ButtonWrapper>
+    <ButtonWrapper >
       <Text>Click me</Text>
     </ButtonWrapper>
   );
